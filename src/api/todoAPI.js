@@ -1,0 +1,1 @@
+export const getAll = () => fetch('https://ghibliapi.herokuapp.com/films?fields=id,title').then(res => res.json());
