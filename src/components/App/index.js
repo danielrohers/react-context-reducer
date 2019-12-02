@@ -11,7 +11,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React Context Sample</h1>
+          <h1 className="App-title">Welcome to React Context Reducer</h1>
+          <p>A global store implementation with react context API, useReducer and other hooks</p>
         </header>
 
         <p className="App-intro">
