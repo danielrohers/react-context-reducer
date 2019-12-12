@@ -13,7 +13,7 @@ export const List = () => {
 
   const _item = (todo) => (
     <ListItem key={todo.id} className="List-item">
-      {todo.title}
+      {todo.name} ({todo.species})
       <Button onClick={() => dispatch(removeTodo(todo.id))}>x</Button>
     </ListItem>
   );

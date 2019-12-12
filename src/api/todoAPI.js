@@ -1,1 +1,1 @@
-export const getAll = () => fetch('https://ghibliapi.herokuapp.com/films?fields=id,title').then(res => res.json());
+export const getAll = () => fetch('https://rickandmortyapi.com/api/character').then(res => res.json());

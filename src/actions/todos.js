@@ -15,14 +15,10 @@ export const fetchError = (error) => ({ type: types.TODO_FETCH_ERROR, error });
 
 export const fetchTodos = () => async (dispatch) => {
   try {
-    const todos = await getAll();
-    if (!Array.isArray(todos) && !todos.length) {
-      dispatch(fetchError('Not found'));
-      return;
-    }
-    dispatch(fetchSuccess(todos));
+    const { results } = await getAll();
+    dispatch(fetchSuccess(results));
   } catch (error) {
-    dispatch(fetchError);
+    dispatch(fetchError(error));
   }
 };
 
