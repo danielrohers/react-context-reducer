@@ -8,7 +8,7 @@ import { Input } from '../Input';
 import { Button } from '../Button';
 
 export const Form = () => {
-  const [{}, dispatch] = useStore();
+  const { dispatch } = useStore();
 
   function _onSubmit(e) {
     e.preventDefault();

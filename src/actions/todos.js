@@ -13,16 +13,17 @@ export const fetchSuccess = (todos) => ({ type: types.TODO_FETCH_SUCCESS, todos 
 
 export const fetchError = (error) => ({ type: types.TODO_FETCH_ERROR, error });
 
-export const fetchTodos = (dispatch) => {
-  getAll()
-    .then((todos) => {
-      if (!Array.isArray(todos) && !todos.length) {
-        dispatch(fetchError('Not found'));
-        return;
-      }
-      dispatch(fetchSuccess(todos))
-    })
-    .catch(fetchError);
+export const fetchTodos = () => async (dispatch) => {
+  try {
+    const todos = await getAll();
+    if (!Array.isArray(todos) && !todos.length) {
+      dispatch(fetchError('Not found'));
+      return;
+    }
+    dispatch(fetchSuccess(todos));
+  } catch (error) {
+    dispatch(fetchError);
+  }
 };
 
 export const addTodo = (todo) => ({ type: types.TODO_ADD, todo });

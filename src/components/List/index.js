@@ -9,7 +9,7 @@ import { Button } from '../Button';
 import { ListItem } from '../ListItem';
 
 export const List = () => {
-  const [state, dispatch] = useStore();
+  const { state, dispatch } = useStore();
 
   const _item = (todo) => (
     <ListItem key={todo.id} className="List-item">
@@ -19,7 +19,7 @@ export const List = () => {
   );
 
   useEffect(() => {
-    fetchTodos(dispatch);
+    dispatch(fetchTodos());
   }, [dispatch]);
 
   if (state.error) {
