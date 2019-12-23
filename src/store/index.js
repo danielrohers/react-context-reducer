@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useReducer, useCallback } from 'react';
 
+import { debug } from './debug';
+
 import { initialState as todosState } from './todos/initialState';
 import { reducer as todosReducer } from './todos/reducer';
 
@@ -14,6 +16,7 @@ const reducers = {
 function reducer(state, action) {
   const { type } = action;
   const newState = !reducers[type] ? state : reducers[type](state, action);
+  debug(type, newState);
   return newState;
 }
 

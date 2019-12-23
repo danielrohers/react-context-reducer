@@ -13,7 +13,7 @@ export const Form = () => {
   function _onSubmit(e) {
     e.preventDefault();
     const form = e.target;
-    dispatch(addTodo({ id: Date.now(), title: form.title.value }));
+    dispatch(addTodo({ id: Date.now(), name: form.name.value }));
     form.reset();
   }
 
@@ -23,7 +23,7 @@ export const Form = () => {
 
   return (
     <form onSubmit={_onSubmit}>
-      <Input required name="title" />
+      <Input required name="name" />
       <Button type="button" onClick={_clear}>Clear</Button>
     </form>
 
