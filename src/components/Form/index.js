@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { useStore } from '../../store';
-import { addTodo, clearTodo } from '../../actions/todos';
+import { addTodo, clearTodo } from '../../store/todos/actions';
 
 import { Input } from '../Input';
 import { Button } from '../Button';

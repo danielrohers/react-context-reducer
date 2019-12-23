@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import './index.css';
 
 import { useStore } from '../../store';
-import { fetchTodos, removeTodo } from '../../actions/todos';
+import { fetchTodos, removeTodo } from '../../store/todos/actions';
 
 import { Button } from '../Button';
 import { ListItem } from '../ListItem';

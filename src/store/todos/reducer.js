@@ -1,4 +1,4 @@
-import { types } from '../../actions/todos';
+import { types } from './types';
 
 const fetchSuccess = (state, { todos }) => ({
   ...state,
@@ -26,12 +26,10 @@ const clear = (state) => ({
   todos: []
 });
 
-const TodoReducer = {
+export const reducer = {
   [types.TODO_FETCH_SUCCESS]: fetchSuccess,
   [types.TODO_FETCH_ERROR]: fetchError,
   [types.TODO_ADD]: add,
   [types.TODO_REMOVE]: remove,
   [types.TODO_CLEAR]: clear
 };
-
-export { TodoReducer };

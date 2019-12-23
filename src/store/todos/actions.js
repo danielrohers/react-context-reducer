@@ -1,13 +1,6 @@
-import { getAll } from '../api/todoAPI';
+import { types } from './types';
 
-export const types = {
-  TODO_FETCH: 'TODO_FETCH',
-  TODO_FETCH_SUCCESS: 'TODO_FETCH_SUCCESS',
-  TODO_FETCH_ERROR: 'TODO_FETCH_ERROR',
-  TODO_ADD: 'TODO_ADD',
-  TODO_REMOVE: 'TODO_REMOVE',
-  TODO_CLEAR: 'TODO_CLEAR'
-};
+import { getAll } from '../../api/todoAPI';
 
 export const fetchSuccess = (todos) => ({ type: types.TODO_FETCH_SUCCESS, todos });
 
